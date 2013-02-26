@@ -1,0 +1,22 @@
+.row
+  .four.colums
+    - if @user.errors.any?
+      %ol
+        - @user.errors.full_messages.each do |msg|
+          %li
+            %span.label.alert.radius= msg
+
+    = form_for @user do |f|
+      = f.label :first_name
+      = f.text_field :first_name, :autofocus => true
+      = f.label :last_name
+      = f.text_field :last_name
+      = f.label :email
+      = f.text_field :email
+      = f.label :password
+      = f.password_field :password
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+      %br
+      = f.submit nil, :class => 'button radius' #nil has to be there for the text to change
+  .eight.columns
