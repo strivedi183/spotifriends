@@ -8,7 +8,7 @@ class SessionController < ApplicationController
       session[:user_id] = user.id #create the hash session, and set the userid to the userid of the user from the table.
       redirect_to(root_path)
     else
-      flash[:notice] = 'You fucked up, yo'
+      flash[:notice] = 'Nope. Try again.'
       redirect_to(login_path)
     end
   end

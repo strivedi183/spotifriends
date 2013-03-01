@@ -4,7 +4,6 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby'
-gem 'bootstrap-sass'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
