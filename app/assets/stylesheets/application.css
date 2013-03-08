@@ -1,5 +1,6 @@
 /*
- *= require 'foundation/stylesheets/foundation.css'
- *= require 'foundation/stylesheets/app.css'
+*= require 'foundation/css/foundation.css'
+*= require 'foundation/css/normalize.css'
+*= require 'morris/morris.css'
  *= require 'my_styles'
  */

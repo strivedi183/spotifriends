@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spotifriends</title>
+  <title>FitBot</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<%= render :partial => "layouts/nav" %>
 <body>
+<div class="row">
+  <div class="large-12 columns">
 
-  <% if flash[:notice].present? %>
-  <div class='row'>
-    <div class="five columns alert-box alert">
-      <%= flash[:notice] %>
-    </div>
-    <div class="seven columns"></div>
-  </div>
-  <% end %>
+  <%= render :partial => "layouts/nav" %>
+
+<h1>FitBot</h1>
 
 <%= yield %>
 
+  <%#= render :partial => "layouts/footer" %>
 
-<%= render :partial => "layouts/footer" %>
+
+</div>
+</div>
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>

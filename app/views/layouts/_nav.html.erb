@@ -1,34 +1,13 @@
-  <!-- Navigation -->
+<!-- Navigation -->
 
-  <nav class="top-bar fixed">
-    <ul>
-      <li class="name"><h1><a href="/">Spotifriends</a></h1></li>
-      <li class="toggle-topbar"><a href="#"></a></li>
-    </ul>
-
-    <section>
-      <ul class="left">
-        <li><a href="#">Link</a></li>
-        <li><%= link_to('New entry', new_entry_path) %></li>
-        <li><a href="#">Link</a></li>
-      </ul>
-
-      <ul class="right">
+      <ul class="button-group round small">
+        <li><a href="/" class="button">Home</a></li>
         <% if @auth.present? %>
-          <li><%= link_to('Logout: ' + @auth.first_name, login_path, :method => :delete, :confirm => 'see ya?') %></li>
+          <li><%= link_to('Active Contests', contests_path, :class => 'button') %></li>
+          <li><%= link_to('Logout', login_path, :method => :delete, :confirm => 'Going to workout?', :class => 'button') %></li>
         <% else %>
-          <li><%= link_to("Log in", login_path) %></li>
+          <li><%= link_to("Log in", login_path, :class => 'button') %></li>
+          <li><%= link_to("Create Account", new_user_path, :class => 'button') %></li>
         <% end %>
-        <li class="has-dropdown">
-          <a href="#">Account</a>
-
-          <ul class="dropdown">
-            <li><%= link_to("Create Account", new_user_path) %></li>
-            <li><%#= link_to("Show Users", users_path) %> </li>
-          </ul>
-        </li>
       </ul>
-    </section>
-  </nav>
-
-  <!-- End Navigation -->
+<!-- End Navigation -->

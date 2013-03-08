@@ -1,10 +1,10 @@
 .row
-  .five.columns
+  .large-5.columns
     = form_tag '/login' do
       = label_tag 'email'
       = text_field_tag 'email', nil, :autofocus => true
       = label_tag 'password'
       = password_field_tag 'password'
       %br
-      = submit_tag  'Login to Spotifriends'#, :class => 'button radius'
-  .seven.columns
+      = submit_tag  'Login to Spotifriends', :class => 'button radius'
+  .large-7.columns
