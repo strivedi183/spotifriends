@@ -4,6 +4,7 @@ class CreateUsersTable < ActiveRecord::Migration
       t.text  :first_name
       t.text  :last_name
       t.text  :email
+      t.string  :image
       t.string  :password_digest
       t.boolean :is_admin
       t.timestamps

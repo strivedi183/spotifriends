@@ -1,7 +1,7 @@
 Spotifriends::Application.routes.draw do
-  root :to => 'home#index'
-  resources :users
-  resources :entries
+  root :to => 'welcome#index'
+  resources :users, :only => [:edit, :new, :create]
+  resources :contests
 
   get '/login'  => 'session#new'
   post '/login' => 'session#create'

@@ -11,18 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130301174237) do
+ActiveRecord::Schema.define(:version => 20130308021126) do
 
-  create_table "entries", :force => true do |t|
-    t.string   "song_url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "contests", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "start_date"
+    t.time     "start_time",  :default => '2000-01-01 12:00:00'
+    t.date     "end_date"
+    t.time     "end_time",    :default => '2000-01-01 20:00:00'
+    t.integer  "group_id"
+    t.integer  "admin_id"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
   end
 
   create_table "groups", :force => true do |t|
-    t.text     "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "groups_users", :id => false, :force => true do |t|
@@ -30,14 +38,37 @@ ActiveRecord::Schema.define(:version => 20130301174237) do
     t.integer "user_id"
   end
 
+  create_table "songs", :force => true do |t|
+    t.string   "name"
+    t.string   "artist"
+    t.string   "spy_url"
+    t.text     "description"
+    t.integer  "contest_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "songs_users", :id => false, :force => true do |t|
+    t.integer "song_id"
+    t.integer "user_id"
+  end
+
   create_table "users", :force => true do |t|
     t.text     "first_name"
     t.text     "last_name"
     t.text     "email"
+    t.string   "image"
     t.string   "password_digest"
     t.boolean  "is_admin"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "song_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
