@@ -21,4 +21,9 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :votes
   validates :first_name, :last_name, :email, :presence => true
   has_secure_password
+
+  def contests
+    groups.map(&:contests).flatten
+  end
+
 end

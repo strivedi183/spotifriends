@@ -1,5 +1,5 @@
 .row
-  .four.colums
+  .large-8.columns
     - if @user.errors.any?
       %ol
         - @user.errors.full_messages.each do |msg|
@@ -19,4 +19,4 @@
       = f.password_field :password_confirmation
       %br
       = f.submit nil, :class => 'button radius' #nil has to be there for the text to change
-  .eight.columns
+  .large-8.columns
