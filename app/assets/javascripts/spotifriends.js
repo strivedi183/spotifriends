@@ -29,6 +29,8 @@ function show_song(data)
   $('.title').append(title);
   $('.artist').append(artist);
   $('.album_art').append().html("<img src=" + album_art + " />");
+  $('#song_spy_url').val('');
+
 
 
 }
