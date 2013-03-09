@@ -15,7 +15,7 @@
     %h2 Songs in the running:
     - @songs.each do |song|
       %h3
-        = link_to(song.name + " by " + song.artist, song.spy_url)
+        = link_to(song.title + " by " + song.artist, song.spy_url)
       %br
   .large-3.columns
 

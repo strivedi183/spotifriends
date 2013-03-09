@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20130308021126) do
   end
 
   create_table "songs", :force => true do |t|
-    t.string   "name"
+    t.string   "title"
     t.string   "artist"
     t.string   "spy_url"
     t.text     "description"

@@ -14,9 +14,9 @@ g2 = Group.create(:name => 'LN alumns', :description => 'Wheres papis money?')
 
 c1 = Contest.create(:name => 'Death to pop', :description => 'Word. It sucks', :start_date => '2012-03-07', :start_time => '12:00', :end_date => '2012-03-10', :end_time => '20:00')
 
-s1 = Song.create(:name => 'Drinking from the bottle', :artist => "Calvin Harris", :spy_url => 'http://open.spotify.com/track/1oHxIPqJyvAYHy0PVrDU98', :description => 'This songs makes me want to dance!')
-s2 = Song.create(:name => 'Jesus Walks', :artist => "Kanye West", :spy_url => 'http://open.spotify.com/track/79ek2oolIYyGUO4aVK5IY2', :description => 'Hot track')
-s3 = Song.create(:name => 'Okay Cupid', :artist => "Kitty Pryde, Beautiful Lou", :spy_url => 'http://open.spotify.com/track/7cbkZYla8cW6SNNDh1EOop', :description => 'EWWW!')
+s1 = Song.create(:title => 'Drinking from the bottle', :artist => "Calvin Harris", :spy_url => 'http://open.spotify.com/track/1oHxIPqJyvAYHy0PVrDU98', :description => 'This songs makes me want to dance!')
+s2 = Song.create(:title => 'Jesus Walks', :artist => "Kanye West", :spy_url => 'http://open.spotify.com/track/79ek2oolIYyGUO4aVK5IY2', :description => 'Hot track')
+s3 = Song.create(:title => 'Okay Cupid', :artist => "Kitty Pryde, Beautiful Lou", :spy_url => 'http://open.spotify.com/track/7cbkZYla8cW6SNNDh1EOop', :description => 'EWWW!')
 
 
 #add 3 users to group 1

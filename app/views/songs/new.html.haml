@@ -1,0 +1,7 @@
+.row
+  .large-4.columns
+    = form_for @song do |f|
+      = f.label :spy_url, 'Spotify URL'
+      = f.text_field :spy_url
+      = f.submit 'Get Song', :class => 'button radius success' , :id => 'get_song_info'
+  .large-8.columns
