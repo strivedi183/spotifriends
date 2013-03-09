@@ -19,12 +19,20 @@ class Song < ActiveRecord::Base
   belongs_to  :contest, :inverse_of => :songs
   has_and_belongs_to_many :users
   has_many :votes, :inverse_of  => :song
+  validates :title, :artist, :presence => true
 
-  def get_song_info(url)
-    doc = Nokogiri::HTML(open(url))
-    @title = doc.css('h1').text
-    @artist = doc.css('h2').first.text.gsub(" by ","")
-    @album_art = doc.css('.album-cover-art').children[1].attributes['src'].value
+  def get_song_info(spy_id)
+    doc = Nokogiri::HTML(open("http://open.spotify.com/track/#{spy_id}"))
+    title = doc.css('h1').text
+    artist = doc.css('h2').first.text.gsub(" by ","")
+    album_art = doc.css('.album-cover-art').children[1].attributes['src'].value
+
+    data = Hash.new
+    data['title'] = title
+    data['artist'] = artist
+    data['album_art'] = album_art
+
+    data
   end
 
 end

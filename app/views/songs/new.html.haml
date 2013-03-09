@@ -1,7 +1,12 @@
 .row
   .large-4.columns
-    = form_for @song do |f|
+    = form_for @song, :remote => true do |f|
+      = token_tag nil
       = f.label :spy_url, 'Spotify URL'
       = f.text_field :spy_url
-      = f.submit 'Get Song', :class => 'button radius success' , :id => 'get_song_info'
-  .large-8.columns
+      = link_to('Get Song', '#', :id=>'get_song_info', :class => 'button radius tiny')
+  .large-4.columns
+  .large-4.columns
+    .title
+    .artist
+    .album_art
