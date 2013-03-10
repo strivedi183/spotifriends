@@ -26,13 +26,13 @@ class Song < ActiveRecord::Base
     title = doc.css('h1').text
     artist = doc.css('h2').first.text.gsub(" by ","")
     album_art = doc.css('.album-cover-art').children[1].attributes['src'].value
-
     data = Hash.new
     data['title'] = title
     data['artist'] = artist
     data['album_art'] = album_art
-
     data
   end
+
+
 
 end
