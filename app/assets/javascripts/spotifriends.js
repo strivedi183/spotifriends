@@ -17,7 +17,7 @@ function fetch_data(spy_id)
     $.ajax({
     dataType: 'json',
     type: "get",
-    url: "/search/" + spy_id
+    url: "/songs/search/" + spy_id
   }).done(show_song);
 
   return false;

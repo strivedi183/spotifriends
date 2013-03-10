@@ -10,6 +10,7 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.create(params[:song])
+    @contest = @auth.contests.active
     redirect_to(songs)
   end
 

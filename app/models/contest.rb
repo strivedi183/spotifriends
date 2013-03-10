@@ -20,4 +20,8 @@ class Contest < ActiveRecord::Base
   belongs_to :group, :inverse_of => :contests
   has_many  :songs, :inverse_of => :contest
 
+  def entries
+    self.songs.map(&:users).flatten
+  end
+
 end

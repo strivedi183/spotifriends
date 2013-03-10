@@ -17,7 +17,7 @@ c1 = Contest.create(:name => 'Death to pop', :description => 'Word. It sucks', :
 s1 = Song.create(:title => 'Drinking from the bottle', :artist => "Calvin Harris", :spy_url => 'http://open.spotify.com/track/1oHxIPqJyvAYHy0PVrDU98', :description => 'This songs makes me want to dance!')
 s2 = Song.create(:title => 'Jesus Walks', :artist => "Kanye West", :spy_url => 'http://open.spotify.com/track/79ek2oolIYyGUO4aVK5IY2', :description => 'Hot track')
 s3 = Song.create(:title => 'Okay Cupid', :artist => "Kitty Pryde, Beautiful Lou", :spy_url => 'http://open.spotify.com/track/7cbkZYla8cW6SNNDh1EOop', :description => 'EWWW!')
-
+s4 = Song.create(:title => 'Dance Wiv me', :artist => "Dizzee Rascal Feat. Calvin Harris", :spy_url => 'http://open.spotify.com/track/1Tfsi3pKqkmgOuHv9esy0F', :description => 'Ass shaker')
 
 #add 3 users to group 1
 g1.users << u1 << u2 << u3
@@ -37,3 +37,6 @@ s2.users << u2
 c1.songs << s2
 s3.users << u3
 c1.songs << s3
+
+#and add 1 more song to user 1 to test
+s4.users << u1
