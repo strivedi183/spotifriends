@@ -1,6 +1,9 @@
 $(function() {
-  $('#get_song_info').click(get_song_info);
+  $('#song_spy_url').val('');
+  $('#song_spy_url').on('input', get_song_info);
+
 });
+
 
 function get_song_info()
 {

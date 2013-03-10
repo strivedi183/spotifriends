@@ -5,8 +5,8 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
     @contest = Contest.find(params[:contest_id])
+    @song = @contest.songs
   end
 
   def create
