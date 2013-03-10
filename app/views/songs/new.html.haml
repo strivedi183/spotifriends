@@ -5,9 +5,15 @@
       = f.label :spy_url, 'Spotify URL'
       = f.text_field :spy_url
       = link_to('Get Song', '#', :id=>'get_song_info', :class => 'button radius')
+    %h3
+      Contest:
+      = @contest.name
+    #add_song_button.hide
+      = link_to('Add Song to contest', '#', :id=>'add_song', :class => 'button radius')
   .large-1.columns
   .large-7.columns
     #song_box
       .title
       .artist
       .album_art
+

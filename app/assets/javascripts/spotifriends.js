@@ -17,7 +17,7 @@ function fetch_data(spy_id)
     $.ajax({
     dataType: 'json',
     type: "get",
-    url: "/songs/search/" + spy_id
+    url: "/search/" + spy_id
   }).done(show_song);
 
   return false;
@@ -33,7 +33,7 @@ function show_song(data)
   $('.album_art').append().html("<img src=" + album_art + " />");
   $('#song_box').slideDown(1000);
   $('#song_spy_url').val('');
-
+  $('#add_song_button').show();
 
 
 }
