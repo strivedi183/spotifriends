@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20130308021126) do
     t.string   "title"
     t.string   "artist"
     t.string   "spy_url"
+    t.string   "spy_id"
     t.text     "description"
     t.integer  "contest_id"
     t.datetime "created_at",  :null => false

@@ -31,12 +31,20 @@ function show_song(data)
   var title = data.title;
   var artist = data.artist;
   var album_art = data.album_art;
+  var spy_id = data.spy_id;
   $('.title').append(title);
   $('.artist').append(artist);
   $('.album_art').append().html("<img src=" + album_art + " />");
   $('#song_box').slideDown(1000);
   $('#song_spy_url').val('');
   $('#add_song_button').show();
+
+  song["title"] = title;
+  song["artist"] = artist;
+  song["spy_id"] = spy_id;
+
+  $('#selected_song').attr('value', song['spy_id']);
+
 
 
 }

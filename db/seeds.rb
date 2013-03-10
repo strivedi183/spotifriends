@@ -31,8 +31,8 @@ c1.admin_id = u1.id
 c1.save
 
 #add song to user, and to contest
-s1.users << u1
-c1.songs << s1
+#s1.users << u1
+#c1.songs << s1
 s2.users << u2
 c1.songs << s2
 s3.users << u3

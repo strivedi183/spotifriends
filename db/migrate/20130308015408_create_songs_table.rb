@@ -4,6 +4,7 @@ class CreateSongsTable < ActiveRecord::Migration
       t.string  :title
       t.string  :artist
       t.string  :spy_url
+      t.string  :spy_id
       t.text  :description
       t.integer :contest_id
       t.timestamps
