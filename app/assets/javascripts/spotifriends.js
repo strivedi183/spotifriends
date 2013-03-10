@@ -4,6 +4,8 @@ $(function() {
 
 function get_song_info()
 {
+  $('.title').text('');
+  $('.artist').text('');
   var url = $('#song_spy_url').val();
   var pattern = /[0-9A-Za-z]*$/;
   var spy_id = url.match(pattern);
@@ -29,6 +31,7 @@ function show_song(data)
   $('.title').append(title);
   $('.artist').append(artist);
   $('.album_art').append().html("<img src=" + album_art + " />");
+  $('#song_box').slideDown(1000);
   $('#song_spy_url').val('');
 
 
