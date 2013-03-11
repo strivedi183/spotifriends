@@ -6,6 +6,8 @@ Spotifriends::Application.routes.draw do
     end
   end
 
+  post '/contests/:contest_id/songs/:id/vote' => 'votes#vote'
+
   get '/search/:spy_id' => 'songs#get_song_info'
 
   get '/login'  => 'session#new'

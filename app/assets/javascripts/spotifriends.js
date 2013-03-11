@@ -1,6 +1,7 @@
 $(function() {
   $('#song_spy_url').val('');
   $('#song_spy_url').on('input', get_song_info);
+  $('.vote').on('click','button', cast_vote);
 
 });
 
@@ -45,6 +46,21 @@ function show_song(data)
 
   $('#selected_song').attr('value', song['spy_id']);
 
+}
 
+function cast_vote()
+{
+  var song_id = $(this).parent().next().text();
 
+    $.ajax({
+      dataType: 'json',
+      type: "post",
+      url: "/contests/" + contest_id + "/songs/" + song_id + "/vote"
+    }).done(confirm_fe);
+  return false;
+}
+
+function confirm_fe()
+{
+  console.log("vote cast");
 }

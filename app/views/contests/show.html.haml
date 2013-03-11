@@ -1,6 +1,8 @@
 .row
   .large-5.columns
     %h2= @contest.name
+    %script
+      = "var contest_id = #{@contest.id}"
     %h5
       Created by:
       = @owner.first_name
@@ -25,6 +27,7 @@
       %tbody
       - @songs.each do |song|
         %tr
-          %td BUTTON
-          %td= link_to(song.title, song.spy_url)
+          %td.vote= button_tag 'Vote', :id => 'vote_button', :class => 'button radius success tiny'
+          %td.hide= song.id
+          %td= link_to(song.title, song.spy_url, :target => "_blank")
           %td= song.artist
