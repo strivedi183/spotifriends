@@ -11,13 +11,20 @@
       = @contest.start_date
       to
       = @contest.end_date
-      - if !@auth.in?(@contest.entries)
+      - if !@auth.in?(@contest.entries) #user does not have an entry in this contest
         = link_to 'Add your song', new_contest_song_path(@contest), :class => 'button radius'
 
   .large-7.columns
-    %h2 Songs in the running:
-    - @songs.each do |song|
-      %h3
-        = link_to(song.title + " by " + song.artist, song.spy_url)
-      %br
-
+    %h2 Songs in this contest
+    %table
+      %theader
+        %tr
+          %th Vote
+          %th Song
+          %th Artist
+      %tbody
+      - @songs.each do |song|
+        %tr
+          %td BUTTON
+          %td= link_to(song.title, song.spy_url)
+          %td= song.artist
