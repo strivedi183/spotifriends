@@ -50,6 +50,7 @@ function show_song(data)
 
 function cast_vote()
 {
+  // this is shit. will use .find() or .closest() when i have time to refactor
   var song_id = $(this).parent().parent().parent().children(':nth-child(2)').text();
   var selected = $(this).parent().parent().children(':nth-child(2)');
 

@@ -28,4 +28,10 @@ class Contest < ActiveRecord::Base
     self.songs.map(&:votes).flatten
   end
 
+  def user_votes #this seems nuts. Need to find more elegant way of doing this.
+    user_ids = []; #user ids of voters
+    self.votes.each {|vote| user_ids << vote.inspect.split(",").slice(1).match("[0-9+]")[0].to_i }
+    user_ids
+  end
+
 end
