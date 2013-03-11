@@ -25,9 +25,13 @@
           %th Song
           %th Artist
       %tbody
-      - @songs.each do |song|
-        %tr
-          %td.vote= button_tag 'Vote', :id => 'vote_button', :class => 'button radius success tiny'
-          %td.hide= song.id
-          %td= link_to(song.title, song.spy_url, :target => "_blank")
-          %td= song.artist
+        - @songs.each do |song|
+          %tr
+            %td
+              - if !@auth.in?(@contest.votes)
+                .vote= button_tag 'Vote', :id => 'vote_button', :class => 'button radius success tiny'
+              - else
+              .checkbox.hide= image_tag('checkbox.png', :size => '35x35')
+            %td.hide= song.id
+            %td= link_to(song.title, song.spy_url, :target => "_blank")
+            %td= song.artist

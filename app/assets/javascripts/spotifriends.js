@@ -50,14 +50,21 @@ function show_song(data)
 
 function cast_vote()
 {
-  var song_id = $(this).parent().next().text();
+  var song_id = $(this).parent().parent().parent().children(':nth-child(2)').text();
+  var selected = $(this).parent().parent().children(':nth-child(2)');
+
+  $('.vote .button').hide();
+  selected.removeClass('hide');
 
     $.ajax({
       dataType: 'json',
       type: "post",
       url: "/contests/" + contest_id + "/songs/" + song_id + "/vote"
     }).done(confirm_fe);
+
+
   return false;
+
 }
 
 function confirm_fe()

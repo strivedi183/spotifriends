@@ -24,4 +24,8 @@ class Contest < ActiveRecord::Base
     self.songs.map(&:users).flatten
   end
 
+  def votes
+    self.songs.map(&:votes).flatten
+  end
+
 end
