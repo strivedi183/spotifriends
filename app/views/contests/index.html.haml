@@ -1,2 +1,19 @@
-- @contests.each do |contest|
-  %h2= link_to(contest.name, contest)
+.row
+  .large-8.columns
+    %h2
+      Welcome back
+      = @auth.first_name
+      !
+  .large-4.columns
+.row
+  .large-9.columns.large-centered
+    %h4 Your active contests
+    - @contests.each do |contest|
+      %h2.contest= link_to(contest.name, contest)
+      %li
+        %h4 You need to submit a song in 3 days
+  .large-3.columns
+.row
+  .large-4.columns
+  .large-8.columns
+

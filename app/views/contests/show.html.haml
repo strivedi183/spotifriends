@@ -1,11 +1,13 @@
 .row
   .large-5.columns
     %h2= @contest.name
+    = link_to 'View playlist in Spotify web', 'http://open.spotify.com/user/khalua/playlist/4sr4qCrtBG45sJO2377FB3', :class => 'button radius'
     %script
       = "var contest_id = #{@contest.id}"
     %h5
-      Created by:
       = @owner.first_name
+      created this contest
+    %br
     %h5
       Description:
       = @contest.description
