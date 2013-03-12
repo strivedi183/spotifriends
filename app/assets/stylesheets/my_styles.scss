@@ -44,7 +44,7 @@ a
 
 /* Tables */
 table {
-  background: none;
+  background: #90b932;
   margin-bottom: 1.25em;
   border: solid 1px #dddddd; }
   table thead,
@@ -61,6 +61,7 @@ table {
       text-align: left; }
   table tr th,
   table tr td {
+    border: 1px solid #c6c6c6;
     padding: 0.5625em 0.625em;
     // font-size: 0.875em;
     font-size: 1.25em;

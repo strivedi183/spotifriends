@@ -12,6 +12,6 @@ class ContestsController < ApplicationController
   def results
     @contest = Contest.find(params[:contest_id])
     @songs = @contest.songs
-    binding.pry
+    #binding.pry
   end
 end

@@ -3,19 +3,25 @@
     %h2
       Results for
       = @contest.name
+      - @contest.tally.each do |s,v|
+        %h5
+          song
+          = s
+          vote(s)
+          = v
+
+
+
     %table
       %theader
         %tr
-          %th Number of votes
           %th Song
           %th Submitted by
       %tbody
         - @songs.each do |song|
           %tr
-            %td VOTES
-            %td= song.title
+            %td
+              = song.id
+              \-
+              = song.title
             %td= song.users.first.first_name
-
-- @contest.tally.each do |user, song|
-  = user.first_name
-  = song.title

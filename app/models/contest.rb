@@ -39,7 +39,11 @@ class Contest < ActiveRecord::Base
     self.votes.each do |x|
       tally[x.user_id] = x.song_id
     end
-    tally
+    counts = tally.values.inject(Hash.new(0)) do |collection, value|
+      collection[value] +=1
+      collection
+    end
+    counts
   end
 
 end
