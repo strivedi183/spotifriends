@@ -47,6 +47,8 @@ function show_song(data)
   song["spy_id"] = spy_id;
 
   $('#selected_song').attr('value', song['spy_id']);
+  $('.draganddrop').hide();
+  $('.sweet_track').show();
 
 }
 

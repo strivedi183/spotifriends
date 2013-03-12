@@ -1,18 +1,25 @@
 %script
   var song = {};
 .row
-  .large-4.columns
+  .large-5.columns
+    .draganddrop= image_tag('draganddrop.jpg')
+    %br
     = form_for(@song, :url => contest_songs_path(@contest), :remote => true, :method => :get) do |f|
       = token_tag nil
       = f.label :spy_url, 'Spotify URL'
       = f.text_field :spy_url
-    %h3
-      Contest:
+
+    %h5.draganddrop
+      Find a song in Spotify(c) and drop it into this box yo!
+    %h5.sweet_track.hide
+      This is a sweet track. Want to add it to the contest
       = @contest.name
+      ?
+
     #add_song_button.hide
       = link_to('Enter song', '#', "data-reveal-id" => "confirm", :class => 'button radius')
   .large-1.columns
-  .large-7.columns
+  .large-6.columns
     #song_box
       .title
       .artist
@@ -20,11 +27,8 @@
 
 #confirm.reveal-modal.medium
   %h2 Add song to contest?
-  %p.lead This is your entry!
+  %p.lead This is your entry. No undos!
   %a.close-reveal-modal &#215;
   = form_for(@song, :url => contest_songs_path(@contest), :method => :post) do |f|
     = f.hidden_field :spy_id, :id => :selected_song
     = f.submit 'OK', :class => 'tiny button'
-
-  / = link_to('OK',new_contest_song_path, :class => 'tiny button', :method => :post )
-
