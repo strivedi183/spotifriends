@@ -2,8 +2,9 @@ Spotifriends::Application.routes.draw do
   root :to => 'welcome#index'
   resources :users, :only => [:edit, :new, :create]
   resources :contests do
-    resources :songs do
-    end
+    get 'results'
+      resources :songs do
+      end
   end
 
   resources :requests, :only => [:edit, :new, :create]

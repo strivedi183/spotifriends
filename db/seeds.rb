@@ -41,3 +41,10 @@ s4.users << u4
 s5.users << u5
 c1.songs << s2 << s3 << s4 << s5
 
+#let's vote, it's the American way
+
+v1 = Vote.create.add_vote(u2, s3)
+v2 = Vote.create.add_vote(u3, s4)
+v3 = Vote.create.add_vote(u4, s3)
+v4 = Vote.create.add_vote(u5, s4)
+
