@@ -6,8 +6,8 @@
           <li><%= link_to('Active Contests', contests_path, :class => 'button') %></li>
           <li><%= link_to('Logout', login_path, :method => :delete, :confirm => 'Going to workout?', :class => 'button') %></li>
         <% else %>
-          <li><%= link_to("Log in", login_path, :class => 'button') %></li>
-          <li><%= link_to("Create Account", new_user_path, :class => 'button') %></li>
+          <li><%= link_to("Beta users log in", login_path, :class => 'button') %></li>
+          <li><%= link_to("Request account", new_request_path, :class => 'button') %></li>
         <% end %>
       </ul>
 <!-- End Navigation -->

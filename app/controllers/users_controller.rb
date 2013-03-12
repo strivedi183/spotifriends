@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_filter :check_if_logged_in, :except => [:new, :create]
+before_filter :check_if_logged_in, :except => [:new, :create, :request_account]
 
   def new
     @user = User.new
@@ -26,5 +26,8 @@ before_filter :check_if_logged_in, :except => [:new, :create]
     else
       render :new
     end
+  end
+
+  def request_account
   end
 end

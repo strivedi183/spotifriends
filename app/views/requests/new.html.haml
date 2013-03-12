@@ -1,0 +1,14 @@
+.row
+  .large-6.columns
+    %h2 You are awesome.
+    %h2 Thank you for checking us out!
+
+  .large-6.columns
+    %h6 Spotifriends is currently in private beta, expecting to launch in the spring of 2013.  If you'd like to get in on the private beta love, enter your email below.
+    %h6 I won't ever spam you. Promise.
+
+    %br
+    = form_for @request do |f|
+      = f.text_field :email, :autofocus => true
+      %br
+      = f.submit 'Request account', :class => 'button radius'

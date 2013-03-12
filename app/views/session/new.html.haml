@@ -1,5 +1,5 @@
 .row
-  .large-5.columns
+  .large-5.columns.large-centered
     = form_tag '/login' do
       = label_tag 'email'
       = text_field_tag 'email', nil, :autofocus => true
@@ -7,4 +7,3 @@
       = password_field_tag 'password'
       %br
       = submit_tag  'Login to Spotifriends', :class => 'button radius'
-  .large-7.columns

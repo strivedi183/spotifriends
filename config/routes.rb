@@ -6,6 +6,9 @@ Spotifriends::Application.routes.draw do
     end
   end
 
+  resources :requests, :only => [:edit, :new, :create]
+  get '/requests/thanks' => 'requests#thanks'
+
   post '/contests/:contest_id/songs/:id/vote' => 'votes#vote'
 
   get '/search/:spy_id' => 'songs#get_song_info'
