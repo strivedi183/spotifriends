@@ -6,7 +6,7 @@ class SessionController < ApplicationController
     user = User.where(:email => params[:email]).first
     if user.present? && user.authenticate(params[:password]) #user and password match
       session[:user_id] = user.id #create the hash session, and set the userid to the userid of the user from the table.
-      redirect_to(root_path)
+      redirect_to(contests_path)
     else
       flash[:notice] = 'Nope. Try again.'
       redirect_to(login_path)
