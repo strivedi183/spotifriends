@@ -2,6 +2,8 @@ $(function() {
   $('#song_spy_url').val('');
   $('#song_spy_url').on('input', get_song_info);
   $('.vote').on('click','button', cast_vote);
+  var date = moment('20130315', 'YYYYMMDD').fromNow();
+  $('#duedate').append(date);
 
 });
 

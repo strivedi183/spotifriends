@@ -13,6 +13,7 @@
       = @contest.start_date
       to
       = @contest.end_date
+    #duedate
       - if !@auth.in?(@contest.entries) #user does not have an entry in this contest
         = link_to 'Add your song', new_contest_song_path(@contest), :class => 'button radius'
 

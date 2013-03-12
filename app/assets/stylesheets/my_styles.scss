@@ -1,23 +1,22 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
-@import url(http://fonts.googleapis.com/css?family=Molengo);
+@import url(http://fonts.googleapis.com/css?family=Michroma);
 
 h1 {
   // font-family: 'Montserrat Alternates', sans-serif;
-  font-family: 'Molengo', sans-serif;
-  // font-weight: 700;
-  font-size: 60px;
+  font-family: 'Michroma', sans-serif;
+  color: black;
+  font-size: 70px;
   margin-top: 5px;
 }
 
 body {
 
- // background-position: center;
- // background-attachment: fixed;
- background-image:url('perforated_white_leather.png');
- // -webkit-background-size: cover;
- // -moz-background-size: cover;
- // -o-background-size: cover;
- // background-size: cover;
+ background-position: center;
+ background-attachment: fixed;
+ background-image:url('headphones.jpg');
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
 }
 
 label {
@@ -37,3 +36,42 @@ label {
 .artist {
   font-size: 30px;
 }
+
+a
+{
+  color: black;
+}
+
+/* Tables */
+table {
+  background: none;
+  margin-bottom: 1.25em;
+  border: solid 1px #dddddd; }
+  table thead,
+  table tfoot {
+    background: none;
+    font-weight: bold; }
+    table thead tr th,
+    table thead tr td,
+    table tfoot tr th,
+    table tfoot tr td {
+      padding: 0.5em 0.625em 0.625em;
+      font-size: 0.875em;
+      color: #222222;
+      text-align: left; }
+  table tr th,
+  table tr td {
+    padding: 0.5625em 0.625em;
+    // font-size: 0.875em;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #222222; }
+  table tr.even, table tr.alt, table tr:nth-of-type(even) {
+    background: none; }
+  table thead tr th,
+  table tfoot tr th,
+  table tbody tr td,
+  table tr td,
+  table tfoot tr td {
+    display: table-cell;
+    line-height: 1.125em; }

@@ -7,6 +7,6 @@ class ContestsController < ApplicationController
     @contest = Contest.find(params[:id])
     @songs = @contest.songs
     @owner = User.find(@contest.admin_id)
-    binding.pry
+   # binding.pry
   end
 end
