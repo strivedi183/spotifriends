@@ -2,5 +2,8 @@
 *= require 'foundation/css/foundation.css'
 *= require 'foundation/css/normalize.css'
 *= require 'morris/morris.css'
- *= require 'my_styles'
+*= require 'jquery-ui/css/south-street/jquery-ui-1.10.2.custom.min.css'
+*= require 'forms'
+*= require 'timepicker'
+*= require 'my_styles'
  */

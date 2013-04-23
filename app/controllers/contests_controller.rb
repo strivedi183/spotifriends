@@ -14,4 +14,16 @@ class ContestsController < ApplicationController
     @songs = @contest.songs
     binding.pry
   end
+
+  def new
+    @contest = Contest.new
+  end
+
+  def create
+    contest = Contest.new(params[:contest])
+    contest.admin_id = @auth.id
+    contest.save
+    redirect_to (contests_path)
+  end
+
 end
