@@ -4,7 +4,6 @@ class SongsController < ApplicationController
 
   def index
     @songs = @contest.songs
-    # @songs = @auth.songs
   end
 
   def new

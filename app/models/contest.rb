@@ -19,6 +19,7 @@ class Contest < ActiveRecord::Base
   attr_accessible :name, :description, :start_date, :start_time, :end_date, :end_time, :group_id, :admin_id
   belongs_to :group, :inverse_of => :contests
   has_many  :songs, :inverse_of => :contest
+  validates :admin_id, :presence => :true
 
   def entries
     self.songs.map(&:users).flatten

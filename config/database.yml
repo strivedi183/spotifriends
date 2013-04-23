@@ -6,3 +6,12 @@ development:
   username: Tony
   host: localhost
   password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: spotifriends_test
+  pool: 5
+  username: Tony
+  host: localhost
+  password:
