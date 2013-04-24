@@ -4,7 +4,10 @@ $(function() {
   $('.vote').on('click','button', cast_vote);
   var date = moment('20130315', 'YYYYMMDD').fromNow();
   $('#duedate').append(date);
-
+  $('#contest_start_date').datepicker();
+  $('#contest_start_time').timepicker();
+  $('#contest_end_date').datepicker();
+  $('#contest_end_time').timepicker();
 });
 
 
