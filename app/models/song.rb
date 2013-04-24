@@ -40,7 +40,13 @@ class Song < ActiveRecord::Base
 
   private
   def add_data
-    data = get_song_info(self.spy_id)
+    begin
+      data = get_song_info(self.spy_id)
+    rescue
+      self.title = 'Title not found'
+      self.artist = 'Artist not found'
+      self.spy_url = "http://open.spotify.com/track/#{self.spy_id}"
+    end
     self.title = data['title']
     self.artist = data['artist']
     self.spy_url = "http://open.spotify.com/track/#{self.spy_id}"

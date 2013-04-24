@@ -14,6 +14,15 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'coffee-rails-source-maps'
+  gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'launchy'
+  gem 'database_cleaner'
   gem 'pry-rails'
   gem 'pry-debugger'
   gem 'pry-stack_explorer'

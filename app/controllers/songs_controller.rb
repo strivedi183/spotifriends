@@ -4,7 +4,6 @@ class SongsController < ApplicationController
 
   def index
     @songs = @contest.songs
-    # @songs = @auth.songs
   end
 
   def new
@@ -22,7 +21,12 @@ class SongsController < ApplicationController
   def get_song_info
     s1 = Song.new
     song = s1.get_song_info(params['spy_id'])
-    render :json => {title:song['title'], artist:song['artist'], album_art:song['album_art'], spy_id:song['spy_id']}
+    begin
+      render :json => {title:song['title'], artist:song['artist'], album_art:song['album_art'], spy_id:song['spy_id']}
+    rescue
+      render :json => {title: 'oh oh. Spotify is busted!'}
+    end
+
   end
 
   private

@@ -30,7 +30,7 @@
         - @songs.each do |song|
           %tr
             %td
-              - if !@auth.id.in?(@contest.users_that_voted) #OK to vote
+              - if !@contest.users_that_voted.include?(@auth.id) #OK to vote
                 .vote= button_tag 'Vote', :id => 'vote_button', :class => 'button radius success tiny'
               - else
               .checkbox.hide= image_tag('checkbox.png', :size => '35x35')

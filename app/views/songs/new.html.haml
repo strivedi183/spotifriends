@@ -9,12 +9,15 @@
       = f.label :spy_url, 'Spotify URL'
       = f.text_field :spy_url
 
+    .loader
+      = image_tag('ajax-loader.gif')
+
     %h5.draganddrop
       Find a song in Spotify(c) and drop it into this box yo!
     %h5.sweet_track.hide
       This is a sweet track. Want to add it to the contest
       = @contest.name
-      ?
+      ? If not, drag another track above.
 
     #add_song_button.hide
       = link_to('Enter song', '#', "data-reveal-id" => "confirm", :class => 'button radius')
