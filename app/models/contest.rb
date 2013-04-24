@@ -29,9 +29,8 @@ class Contest < ActiveRecord::Base
   end
 
   def users_that_voted
-    user_ids = [];
-    self.votes.each {|u| user_ids << u.user_id }
-    user_ids
+    self.votes.map(&:user_id) #thanks Phil!
+
   end
 
   def tally
