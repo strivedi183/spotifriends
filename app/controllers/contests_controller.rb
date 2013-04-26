@@ -12,11 +12,11 @@ class ContestsController < ApplicationController
   def results
     @contest = Contest.find(params[:contest_id])
     @songs = @contest.songs
-    #binding.pry
   end
 
   def new
     @contest = Contest.new
+    @groups = @auth.groups
   end
 
   def create

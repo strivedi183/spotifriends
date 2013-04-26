@@ -9,13 +9,10 @@
 #  updated_at  :datetime         not null
 #
 
-class Group < ActiveRecord::Base
-  attr_accessible :name, :description
-  has_and_belongs_to_many  :users
-  has_many  :contests, :inverse_of => :group
-
-  def in_group?(user)
-    self.users.include?(user)
+FactoryGirl.define do
+  factory :group0, class: Group do
+    name 'College'
+    description 'Go Great Danes!'
+    users {FactoryGirl.create(:user0)}
   end
-
 end

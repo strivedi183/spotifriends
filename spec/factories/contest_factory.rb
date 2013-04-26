@@ -19,6 +19,6 @@ FactoryGirl.define do
   factory :contest, class: Contest do
     name 'Best City'
     description 'The greatest city in the world yo!'
-    admin_id {FactoryGirl.create(:user).id}
+    admin_id {FactoryGirl.create(:user0).id}
   end
 end

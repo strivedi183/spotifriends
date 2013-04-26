@@ -1,5 +1,17 @@
 .row
-  .large-9.large-centered.column
+  .large-1.column
+  .large-6.column
+    %p
+      Your groups:
+      %br
+      - @groups.each do |group|
+        = group.name
+        - group.users.each do |user|
+          ,
+          = user.first_name
+        %br
+
+  .large-5.column
     = simple_form_for @contest do |f|
       = f.input :name
       = f.input :description

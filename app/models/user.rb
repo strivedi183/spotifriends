@@ -15,7 +15,6 @@
 
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :image, :password, :password_confirmation
-  has_many :groups, :inverse_of => :user
   has_and_belongs_to_many  :songs
   has_and_belongs_to_many :groups
   has_and_belongs_to_many :votes
@@ -25,5 +24,6 @@ class User < ActiveRecord::Base
   def contests
     groups.map(&:contests).flatten
   end
+
 
 end

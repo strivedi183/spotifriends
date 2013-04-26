@@ -6,6 +6,7 @@ gem 'haml'
 gem 'bcrypt-ruby'
 gem 'nokogiri'
 gem 'simple_form'
+gem 'squeel'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
@@ -31,4 +32,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
+  gem 'guard-spork'
+  gem 'spork'
+  gem 'rb-fsevent'
+  gem 'growl'
 end

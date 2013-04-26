@@ -11,7 +11,7 @@ describe 'Session' do
   end
 
   describe 'POST /login' do
-    let(:user) {FactoryGirl.create(:user)}
+    let(:user) {FactoryGirl.create(:user0)}
 
     it 'logs the user into the system if the creds are correct' do
       login_to_system(user)
@@ -28,7 +28,7 @@ describe 'Session' do
   end
 
   describe 'DELETE /login', js: true do
-    let(:user) {FactoryGirl.create(:user)}
+    let(:user) {FactoryGirl.create(:user0)}
 
     it 'logs the user of the system' do
       login_to_system(user)
