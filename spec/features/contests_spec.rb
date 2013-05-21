@@ -8,8 +8,8 @@ describe 'Contest' do
     it 'allows logged in user to see new contest form' do
       user = FactoryGirl.create(:user0)
       login_to_system(user)
-      click_link('New Contest')
-      page.should have_button('Create Contest')
+      click_link('New contest')
+      page.should have_button('Create contest')
     end
 
     # it 'shows the groups the user belongs to' do

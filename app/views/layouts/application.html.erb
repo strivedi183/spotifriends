@@ -5,38 +5,31 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-<div class="row">
-  <div class="large-12 columns">
+  <div class="row">
+    <div class="large-12 columns">
+      <%= render :partial => "layouts/nav" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-7 columns">
+      <h2>Spotifriends</h2>
+    </div>
+  </div>
+  <div class='spacer'></div>
 
-  <%= render :partial => "layouts/nav" %>
-
-<h1>Spotifriends</h1>
-
-<%= yield %>
+  <%= yield %>
 
   <%#= render :partial => "layouts/footer" %>
 
-
-</div>
-</div>
   <script>
     $(document).foundation();
   </script>
 
-  <script type="text/javascript">
+  <%= render :partial => "layouts/google_analytics" %>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-39219247-1']);
-  _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 </body>
 </html>

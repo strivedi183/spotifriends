@@ -8,8 +8,8 @@ describe 'User' do
 
     it 'displays a page with the users preferences and groups' do
       login_to_system(user)
-      visit user_path(user)
-      page.should have_link('Update settings')
+      click_link('Your settings')
+      page.should have_button('Update User')
     end
   end
 end

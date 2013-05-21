@@ -29,12 +29,14 @@ function fetch_data(spy_id)
     type: "get",
     url: "/search/" + spy_id
   }).done(show_song);
-
+    console.log('data gone out');
   return false;
+
 }
 
 function show_song(data)
 {
+  console.log('data came back');
   $('.loader').hide();
   var title = data.title;
   var artist = data.artist;
