@@ -1,25 +1,26 @@
 .row
   .large-5.columns
-    %h2= @contest.name
+    %h6= @contest.name
     = link_to 'View playlist in Spotify web', 'http://open.spotify.com/user/khalua/playlist/4sr4qCrtBG45sJO2377FB3', :class => 'button radius'
     %script
       = "var contest_id = #{@contest.id}"
-    %h5
+    %p
       = @owner.first_name
       created this contest
     %br
-    %h5
+    %p
       Description:
       = @contest.description
-    %h5
+    %p
       = @contest.start_date
       to
       = @contest.end_date
       - if !@auth.in?(@contest.entries) #user does not have an entry in this contest
+        %br
         = link_to 'Add your song', new_contest_song_path(@contest), :class => 'button radius'
 
   .large-7.columns
-    %h2 Songs in this contest
+    %p Songs in this contest
     %table
       %theader
         %tr
@@ -27,11 +28,12 @@
           %th Song
           %th Artist
       %tbody
-        - @songs.each do |song|
+        - @contest.songs.each do |song|
           %tr
             %td
               - if !@contest.users_that_voted.include?(@auth.id) #OK to vote
-                .vote= button_tag 'Vote', :id => 'vote_button', :class => 'button radius success tiny'
+                - if !song.in?(@auth.songs) #not ok to vote on your own song
+                  .vote= button_tag 'Vote', :id => 'vote_button', :'data-song-id' => song.id ,:class => 'button radius success tiny'
               - else
               .checkbox.hide= image_tag('checkbox.png', :size => '35x35')
             %td.hide= song.id

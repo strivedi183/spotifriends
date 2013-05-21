@@ -8,6 +8,7 @@ window.app =
     $('#contest_start_date, #contest_end_date').datepicker()
     $('#contest_start_time, #contest_end_time').timepicker()
     $('.loader').hide()
+    $('.vote').on('click','button', cast_vote)
 
   get_song_info: ->
     $('.loader').show()
@@ -49,6 +50,24 @@ window.app =
     $('#selected_song').attr('value', song['spy_id'])
     $('.draganddrop').hide()
     $('.sweet_track').show()
+
+  cast_vote: ->
+    song_id = $(this).data('song-id')
+    vote_button_cell = $(this).parent().parent().children().next()
+    console.log(song_id)
+    console.log(vote_button_cell)
+    $('.vote button').hide() #all vote buttons go away
+    vote_button_cell.removeClass('hide') #checkbox appears. like magic
+
+    settings =
+      dataType: 'json',
+      type: 'post',
+      url: "/contests/" + contest_id + "/songs/" + song_id + "/vote"
+    $.ajax(settings).done(app.confirm_fe)
+    false
+
+  confirm_fe: ->
+    console.log('vote cast')
 
 
 $(document).ready(app.ready)

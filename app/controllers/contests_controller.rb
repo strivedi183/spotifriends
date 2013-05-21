@@ -5,7 +5,6 @@ class ContestsController < ApplicationController
 
   def show
     @contest = Contest.find(params[:id])
-    @songs = @contest.songs
     @owner = User.find(@contest.admin_id)
   end
 

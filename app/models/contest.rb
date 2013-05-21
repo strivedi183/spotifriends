@@ -31,8 +31,8 @@ class Contest < ActiveRecord::Base
 
   def users_that_voted
     self.votes.map(&:user_id) #thanks Phil!
-
   end
+
 
   def tally
     tally = {}
