@@ -33,6 +33,10 @@ class Contest < ActiveRecord::Base
     self.votes.map(&:user_id) #thanks Phil!
   end
 
+  def user_vote(user_id)
+    Vote.where()
+  end
+
 
   def tally
     tally = {}

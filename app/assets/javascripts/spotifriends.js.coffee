@@ -8,7 +8,6 @@ window.app =
     $('#contest_start_date, #contest_end_date').datepicker()
     $('#contest_start_time, #contest_end_time').timepicker()
     $('.loader').hide()
-    $('.vote').on('click','button', cast_vote)
 
   get_song_info: ->
     $('.loader').show()
