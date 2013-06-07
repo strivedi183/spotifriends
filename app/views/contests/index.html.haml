@@ -1,6 +1,6 @@
 .row
   .large-8.columns
-    %h2
+    %h3
       Welcome back
       = @auth.first_name
       !
@@ -8,10 +8,20 @@
 .row
   .large-9.columns.large-centered
     %h4 Your active contests
-    - @contests.each do |contest|
-      %h2.contest= link_to(contest.name, contest)
-      %li
-        %h4 You need to submit a song in 3 days
+    %table
+      %thead
+        %tr
+          %th Theme
+          %th Created by
+          %th Ends on
+      %tbody
+        - @contests.each do |contest|
+          %tr
+            %td= link_to(contest.name, contest)
+            %td= contest.admin_first_name
+            %td
+              = contest.end_date
+              = contest.end_time
   .large-3.columns
 .row
   .large-4.columns
