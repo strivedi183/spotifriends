@@ -7,6 +7,10 @@ gem 'bcrypt-ruby'
 gem 'nokogiri'
 gem 'simple_form'
 gem 'squeel'
+gem 'carrierwave'
+gem 'fog'
+gem 'rmagick'
+gem 'remotipart'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'

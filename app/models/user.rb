@@ -13,12 +13,14 @@
 #  updated_at      :datetime         not null
 #
 
+
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :image, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :email, :image, :password, :password_confirmation, :group_ids
   has_and_belongs_to_many  :songs
   has_and_belongs_to_many :groups
   has_and_belongs_to_many :votes
   validates :first_name, :last_name, :email, :presence => true
+  mount_uploader  :image, ImageUploader
   has_secure_password
 
   def contests

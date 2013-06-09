@@ -1,7 +1,7 @@
 .row
   .large-5.columns.large-centered
     %h3 Account settings
-    = simple_form_for @user, :html => {:multiform => true} do |f|
+    = simple_form_for @user, :html => {:multipart => true} do |f|
       = f.input :first_name
       = f.input :last_name
       = f.input :email
