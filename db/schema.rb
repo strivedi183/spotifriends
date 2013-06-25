@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312034419) do
+ActiveRecord::Schema.define(:version => 20130625234011) do
 
   create_table "contests", :force => true do |t|
     t.string   "name"
@@ -65,10 +65,9 @@ ActiveRecord::Schema.define(:version => 20130312034419) do
     t.text     "last_name"
     t.text     "email"
     t.string   "image"
-    t.string   "password_digest"
     t.boolean  "is_admin"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "votes", :force => true do |t|
