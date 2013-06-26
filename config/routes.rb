@@ -1,4 +1,6 @@
 Spotifriends::Application.routes.draw do
+  devise_for :users
+
   root :to => 'welcome#index'
   resources :users, :only => [:edit, :new, :create, :show, :update]
   resources :contests do
@@ -14,7 +16,7 @@ Spotifriends::Application.routes.draw do
 
   get '/search/:spy_id' => 'songs#get_song_info'
 
-  get '/login'  => 'session#new'
-  post '/login' => 'session#create'
-  delete '/login' => 'session#destroy'
+  # get '/login'  => 'session#new'
+  # post '/login' => 'session#create'
+  # delete '/login' => 'session#destroy'
 end
