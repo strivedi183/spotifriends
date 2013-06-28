@@ -23,6 +23,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def claim_account
+    if current_user
+      @user = current_user
+      sign_out current_user
+      redirect_to new_password_path(@user)
+    else
+      redirect_to :back
+    end
+  end
+
   def update
     @user = @auth
     if @user.update_attributes(params[:user])

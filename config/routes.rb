@@ -12,6 +12,8 @@ Spotifriends::Application.routes.draw do
   resources :requests, :only => [:edit, :new, :create]
   get '/requests/thanks' => 'requests#thanks'
 
+  get 'users/claim_account/:id' => 'users#claim_account', :as => :claim_account
+
   post '/contests/:contest_id/songs/:id/vote' => 'votes#vote'
 
   get '/search/:spy_id' => 'songs#get_song_info'

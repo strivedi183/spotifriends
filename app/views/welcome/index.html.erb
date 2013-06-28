@@ -24,6 +24,19 @@
 
       <p>Spotifriends helps you run contests to discover new music. It's pretty goddamn amazing.  </p>
 
+      <% if current_user && (current_user.logged_in_with_pwd != true) %>
+        <%= button_to "Claim your account", claim_account_path(current_user), :method => :get %>
+      <% end %>
+
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+
       <p></p>
 
     </div>
@@ -32,3 +45,6 @@
     </div>
   </div>
 
+<% if @current_user %>
+  <%= link_to "Claim your account", new_password_path(session[:user_id]) %>
+<% end %>
