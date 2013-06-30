@@ -2,5 +2,20 @@
 
 <ul class="button-group round small right">
   <li><a href="/" class="button">Home</a></li>
+  <% if user_signed_in? %>
+		<% if current_user.logged_in_with_pwd == false %>
+        	<li><%= link_to "Claim your account", claim_account_path(current_user), :class => 'button' %></li>
+        <% else %>
+			<li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'button' %></li>
+		<% end %>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button'  %></li>
+      <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path, :class => 'button'  %></li>
+        <li><%= link_to "Login", new_user_session_path, :class => 'button'  %></li>
+      <% end %>
 </ul>
+
+  <% if user_signed_in? %>
+  	Logged in as <strong><%= current_user.email %></strong>
+  <% end %>
 <!-- End Navigation -->
