@@ -1,5 +1,5 @@
 Spotifriends::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :passwords => "passwords" }
 
   root :to => 'welcome#index'
   resources :users, :only => [:edit, :new, :create, :show, :update]

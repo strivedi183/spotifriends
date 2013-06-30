@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   def claim_account
     if current_user
       @user = current_user
+      session[:token_url] = request.env["HTTP_REFERER"]
       sign_out current_user
       redirect_to new_password_path(@user)
     else
