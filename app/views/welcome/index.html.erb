@@ -23,11 +23,6 @@
       <h4>Compete with your friends and see who has the best taste in music!</h4>
 
       <p>Spotifriends helps you run contests to discover new music. It's pretty goddamn amazing.  </p>
-
-      <% if current_user && (current_user.logged_in_with_pwd != true) %>
-        <%= button_to "Claim your account", claim_account_path(current_user), :method => :get %>
-      <% end %>
-
       <p></p>
 
     </div>
