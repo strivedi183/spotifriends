@@ -1,6 +1,6 @@
 class ContestsController < ApplicationController
   def index
-    @contests = @auth.contests
+    @contests = current_user.contests
   end
 
   def show
@@ -15,12 +15,12 @@ class ContestsController < ApplicationController
 
   def new
     @contest = Contest.new
-    @groups = @auth.groups
+    @groups = current_user.groups
   end
 
   def create
     contest = Contest.new(params[:contest])
-    contest.admin_id = @auth.id
+    contest.admin_id = current_user.id
     contest.save
     redirect_to (contests_path)
   end

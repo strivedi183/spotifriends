@@ -4,7 +4,7 @@ class VotesController < ApplicationController
 
   def vote
     song = Song.find(params[:id])
-    render :json => Vote.create.add_vote(@auth, song)
+    render :json => Vote.create.add_vote(current_user, song)
   end
 
 

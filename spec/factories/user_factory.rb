@@ -18,32 +18,32 @@ FactoryGirl.define do
     first_name  'Tony'
     last_name   'Contreras'
     email       'tony.contreras@gmail.com'
-    password    'abc'
-    password_confirmation 'abc'
+    password    'abcdefghi'
+    password_confirmation 'abcdefghi'
   end
 
   factory :user1, class: User do
     first_name  'Aly'
     last_name   'Contreras'
     email       'aly@gmail.com'
-    password    'abc'
-    password_confirmation 'abc'
+    password    'abcdefghi'
+    password_confirmation 'abcdefghi'
   end
 
     factory :user2, class: User do
     first_name  'Olivia'
     last_name   'Contreras'
     email       'olivia@gmail.com'
-    password    'abc'
-    password_confirmation 'abc'
+    password    'abcdefghi'
+    password_confirmation 'abcdefghi'
   end
 
     factory :user3, class: User do
     first_name  'Lulu'
     last_name   'Contreras'
     email       'lulu@gmail.com'
-    password    'abc'
-    password_confirmation 'abc'
+    password    'abcdefghi'
+    password_confirmation 'abcdefghi'
   end
 
 
