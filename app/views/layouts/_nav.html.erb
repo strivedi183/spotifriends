@@ -7,6 +7,8 @@
         	<li><%= link_to "Claim your account", claim_account_path(current_user), :class => 'button' %></li>
         <% else %>
 			<li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'button' %></li>
+      <li><%= link_to 'New contest', new_contest_path, :class => 'button' %></li>
+      <li><%= link_to 'My contests', contests_path, :class => 'button' %></li>
 		<% end %>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button'  %></li>
       <% else %>
