@@ -1,7 +1,7 @@
 %table
   %thead
-    %th= @current_user.groups.first.name
-    - @current_user.groups.first.users.each do |u|
+    %th= group_form.name
+    - group_form.users.each do |u|
       %tr
         %td=u.first_name
         %td=u.last_name

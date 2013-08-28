@@ -1,7 +1,7 @@
 .row
   .large-1.column
   .large-6.column
-    =render( 'group_form',  :locals => { group: @current_user.groups.first } )
+    =render(partial: 'group_form',  object: @current_user.groups.first )
 
   .large-5.column
     = simple_form_for @contest do |f|
