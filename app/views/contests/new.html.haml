@@ -1,15 +1,7 @@
 .row
   .large-1.column
   .large-6.column
-    %p
-      Your groups:
-      %br
-      - @groups.each do |group|
-        = group.name
-        - group.users.each do |user|
-          ,
-          = user.first_name
-        %br
+    =render( 'group_form',  :locals => { group: @current_user.groups.first } )
 
   .large-5.column
     = simple_form_for @contest do |f|

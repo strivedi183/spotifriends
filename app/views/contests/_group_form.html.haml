@@ -1,0 +1,8 @@
+%table
+  %thead
+    %th= @current_user.groups.first.name
+    - @current_user.groups.first.users.each do |u|
+      %tr
+        %td=u.first_name
+        %td=u.last_name
+        %td=u.email
