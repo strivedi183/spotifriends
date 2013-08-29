@@ -33,8 +33,8 @@ describe 'Session' do
     it 'logs the user of the system' do
       login_to_system(user)
       click_link('Logout')
-      page.driver.browser.switch_to.alert.accept
-      page.should have_link('Beta login')
+      # page.driver.browser.switch_to.alert.accept
+      page.should have_link('Sign up')
     end
   end
 end
