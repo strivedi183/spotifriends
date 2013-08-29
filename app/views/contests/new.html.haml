@@ -1,7 +1,8 @@
 .row
   .large-1.column
   .large-6.column
-    =render(partial: 'group_form',  object: @current_user.groups.first )
+    =if @current_user.groups.count > 0
+      =render(partial: 'group_form',  object: @current_user.groups.first )
 
   .large-5.column
     = simple_form_for @contest do |f|
