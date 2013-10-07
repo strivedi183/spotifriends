@@ -1,8 +1,9 @@
 %table
   %thead
-    %th= group_form.name
-    - group_form.users.each do |u|
-      %tr
-        %td=u.first_name
-        %td=u.last_name
-        %td=u.email
+    - if group_form.present?
+      %th= group_form.name
+      - group_form.users.each do |u|
+        %tr
+          %td=u.first_name
+          %td=u.last_name
+          %td=u.email
