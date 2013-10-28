@@ -25,4 +25,14 @@ class ContestsController < ApplicationController
     redirect_to (contests_path)
   end
 
+  def add_group
+    @group = Group.new
+  end
+
+  def create_group
+    @group = Group.create(params[:group])
+    current_user.groups << @group
+    @contest = Contest.new
+    @groups = current_user.groups
+  end
 end
