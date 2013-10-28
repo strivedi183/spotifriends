@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  load_and_authorize_resource
   #   before_filter :one_vote, :only => [:vote]
   # before filter needs to know that this contest is open for voting
 

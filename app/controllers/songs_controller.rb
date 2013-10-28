@@ -1,6 +1,9 @@
 class SongsController < ApplicationController
+  load_and_authorize_resource
+
   before_filter :get_contest, :except => [:get_song_info]
   before_filter :one_song, :only => [:new, :create]
+
 
   def index
     @songs = @contest.songs
