@@ -27,7 +27,8 @@ group :development, :test do
   gem 'rb-fsevent'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'rubyzip',  "~> 0.9.9"
+  gem 'selenium-webdriver', "~> 2.34.0"
   gem 'launchy'
   gem 'database_cleaner'
   gem 'pry-rails'
